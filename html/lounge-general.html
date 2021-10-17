@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lounge-general</title>
+    <style>
+        body {
+            background-color: #000000;
+        }
+        .main-box {
+            background-color: white;
+            width: 360px;
+            height: 100%;
+        }
+        .navbar {
+            height: 50px;
+            width: 360px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 3px 4px -3px gray; /*적용이 되긴 되는데 공지사항 박스 위로 잘 안 보이는 것 같아요 왤까요?*/
+        }
+        .navbar-back {
+            display: flex;
+            align-items: center;
+            width: 20px;
+            height: 12px;
+        }
+        .navbar-text {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            position: absolute;
+        }
+        .navbar-text1 {
+            display: flex;
+            justify-content: center;
+        }
+        .navbar-text2 {
+            display: flex;
+            justify-content: center;
+        }
+        .roboto-12px {
+            font-family: Roboto;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: 0em;
+            text-align: center;
+            line-height: 0px;
+        }
+        .roboto-10px {
+            font-family: Roboto;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 12px;
+            letter-spacing: 0em;
+            text-align: center;
+            line-height: 0px;
+        }
+        .fixed-alert {
+            background-color: #ffdd63;
+            height: 32px;
+            width: 360px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        .pin-img {
+            display: flex;
+            width: 12px;
+            height: 12px;
+            padding-left: 26px;
+        }
+        .pin-text-a {
+            display: flex;
+            padding-left: 10px;
+            font-family: Roboto;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 14px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        .pin-text-b {
+            display: flex;
+            padding-left: 4px;
+            font-family: Roboto;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 14px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        .date {
+            width: 360px;
+            height: 36px;
+            display: flex;
+        }
+        .date-text {
+            padding-left: 16px;
+            font-family: Noto Sans;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 18px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        .contents-box{
+            padding: 14px 0 0 16px;
+            width: 328px;
+            height: 265px;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        .contents-profile{
+            display: flex;
+            width: 36px;
+            height: 36px;
+            padding: 10px 0 0 10px;
+        }
+        .contents-content {
+            display: flex;
+            flex-flow: column nowrap;
+            width: 260px;
+            height: 235px;
+            padding: 10px 0 0 12px;
+        }
+        .contents-id-date{
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        .contents-id {
+            display: flex;
+            align-items: center;
+            font-family: Noto Sans;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        .contents-date{
+            display: flex;
+            align-items: center;
+            padding: 6px 0 0 6px;
+            font-family: Noto Sans;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0em;
+            text-align: left;
+            color: darkgray;
+        }
+        .contents-text{
+            padding-top: 6px;
+            font-family: Noto Sans;
+            font-size: 16px;
+            font-style: normal;/*이게 뭔가요?*/
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0.008em;
+            text-align: left;
+        }
+        .contents-imoticon{
+            width: 100%;
+            height: 28px;
+            padding-top: 16px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+        .inner-box{
+            padding-top: 6px;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        .inner-momo{
+            width: 4px;
+            height: 144px;
+        }
+        .inner-contents {
+            padding-left: 6px;
+            width: 252px;
+            height: 144px;
+        }
+        .footer{ /*위 컨텐츠를 스크롤함에도 불구하고 그 위치에 고정되어야 하는 것 같은데 어떡하지*/
+            margin-top: 20px;
+            width: 360px;
+            height: 52px;
+            border-top: 1px solid #dadada;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .footer-bar {
+        }
+    </style>
+</head>
+<body>
+<div class="main-box">
+    <div class="navbar">
+        <div class="navbar-back">
+            <img style="position: fixed; left: 30px;" src="../image/left.png" height="20" width="12"/>
+        </div>
+        <div class="navbar-text">
+            <div class="navbar-text1">
+                <p class="roboto-12px">#lounge-general</p>
+            </div>
+            <div class="navbar-text2">
+                <p class="roboto-10px" style="color: gray">채널참여: 4명</p>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-alert">
+        <div class="pin-img">
+            <img src="../image/pin.svg" height="12" width="12"/>
+        </div>
+        <div class="pin-text-a">
+            <p>paperlee</p>
+        </div>
+        <div class="pin-text-b">
+            <p>사업자등록증: 7327000283</p>
+        </div>
+    </div>
+    <div class="date">
+        <div class="date-text">
+            <p>2021년 9월 15일 (어제)</p>
+        </div>
+    </div>
+    <div class="contents-box">
+        <div class="contents-profile">
+            <img src="../image/paper-profile.svg" height="36" width="36"/>
+        </div>
+        <div class="contents-content">
+            <div class="contents-id-date">
+                <div class="contents-id">paperlee</div>
+               <div class="contents-date">`210608 14:55</div>
+            </div>
+            <div class="contents-text">
+                금일 부로 모든 거래는 사업용카드로 사용 하는 것을 권장합니다.
+                특정 쇼핑몰의 경우 현금영수증을 선택할 수 없는 UI를 가진 쇼핑몰이 있는데 이 경우 저희 사업자에서 매입을 잡을 수가 없어 큰 손해를 보는 상황이니 에스크로 결제를 통해 현금영수증을 발급 할 수 있도록 하면 좋을 것 같습니다.
+            </div>
+            <div class="contents-imoticon">
+                <img src="../image/imoticon.svg" width="88" height="28"/>
+            </div>
+        </div>
+    </div>
+    <div class="contents-box">
+        <div class="contents-profile">
+            <img src="../image/paper-profile.svg" height="36" width="36"/>
+        </div>
+        <div class="contents-content"><!--두번째; 이너박스 삽입-->
+            <div class="contents-id-date">
+                <div class="contents-id">paperlee</div>
+                <div class="contents-date">`210608 14:55</div>
+            </div>
+            <div class="contents-text">
+                좀 읽어주세요.
+                <div class="inner-box">
+                    <div class="inner-momo">
+                        <img src="../image/bar.svg" height="144" width="4"/>
+                    </div>
+                    <div class="inner-contents">
+                        <img src="../image/inner-contents.svg" height="144" width="252"/>
+                    </div>
+                </div>
+            </div>
+            <div class="contents-imoticon">
+                <img src="../image/imoticon.svg" width="88" height="28"/>
+            </div>
+        </div>
+    </div>
+    <div class="contents-box">
+        <div class="contents-profile">
+            <img src="../image/paper-profile.svg" height="36" width="36"/>
+        </div>
+        <div class="contents-content">
+            <div class="contents-id-date">
+                <div class="contents-id">paperlee</div>
+                <div class="contents-date">`210608 14:55</div>
+            </div>
+            <div class="contents-text">
+                금일 부로 모든 거래는 사업용카드로 사용 하는 것을 권장합니다.
+                특정 쇼핑몰의 경우 현금영수증을 선택할 수 없는 UI를 가진 쇼핑몰이 있는데 이 경우 저희 사업자에서 매입을 잡을 수가 없어 큰 손해를 보는 상황이니 에스크로 결제를 통해 현금영수증을 발급 할 수 있도록 하면 좋을 것 같습니다.
+            </div>
+            <div class="contents-imoticon">
+                <img src="../image/imoticon.svg" width="88" height="28"/>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-bar">
+            <img src="../image/home.svg" height="40px" width="70px"/>
+            <img src="../image/direct-m.svg" height="40px" width="70px"/>
+            <img src="../image/search.svg" height="40px" width="70px"/>
+            <img src="../image/me.svg" height="40px" width="70px"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
